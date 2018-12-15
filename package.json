@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "nodemon --exec 'mocha -R min'"
   },
-  "author": "",
+  "author": "Edward Newman",
   "license": "ISC",
   "dependencies": {
     "mocha": "^5.2.0",
