@@ -8,8 +8,12 @@ mongoose.connection
   });
 
 beforeEach((done) => {
-  mongoose.connection.collections.users.drop(() => {
-    console.log('Dropping old data');
-    done();
+  const { users, comments, blogposts } = mongoose.connection.collections;
+  users.drop(() => {
+    comments.drop(() => {
+      blogposts.drop(() => {
+        done();
+      });
+    });
   });
 });
